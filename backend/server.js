@@ -5,6 +5,6 @@ const dotenv = requie('dotenv')
 
 dotenv.config()
 
-mongoose.connect()
+mongoose.connect(process.env.DATABASE_ACCESS, () => console.log("Database connected"))
 
 app.listen(4000, () => console.log("Server is up and running"))
