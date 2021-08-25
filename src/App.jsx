@@ -17,6 +17,7 @@ class App extends Component {
         this.changeUsername = this.changeUsername.bind(this)
         this.changeEmail = this.changeEmail.bind(this)
         this.changePassword = this.changePassword.bind(this)
+        this.onSubmit = this.onSubmit.bind(this)
     }
 
     changeFirstName(event) {
