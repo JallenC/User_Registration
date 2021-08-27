@@ -11,6 +11,8 @@ router.post('/signup', async (request, response) => {
     const signedupUser = new signupTemplateCopy({
         firstName: request.body.firstName,
         lastName: request.body.lastName,
+        dateOfBirth: request.body.dateOfBirth,
+        age: request.body.age,
         username: request.body.username,
         email: request.body.email,
         password: securePassword
