@@ -8,12 +8,16 @@ class App extends Component {
         this.state = {
             firstName: '',
             lastName: '',
+            dateOfBirth: '',
+            age: '',
             username: '',
             email: '',
             password: ''
         }
         this.changeFirstName = this.changeFirstName.bind(this)
         this.changeLastName = this.changeLastName.bind(this)
+        this.changeDateOfBirth = this.changeDateOfBirth.bind(this)
+        this.changeAge = this.changeAge.bind(this)
         this.changeUsername = this.changeUsername.bind(this)
         this.changeEmail = this.changeEmail.bind(this)
         this.changePassword = this.changePassword.bind(this)
@@ -28,6 +32,16 @@ class App extends Component {
     changeLastName(event) {
         this.setState({
             lastName:event.target.value
+        })
+    }
+    changeDateOfBirth(event) {
+        this.setState({
+            dateOfBirth:event.target.value
+        })
+    }
+    changeAge(event) {
+        this.setState({
+            age:event.target.value
         })
     }
     changeUsername(event) {
@@ -52,6 +66,8 @@ class App extends Component {
         const registered = {
             firstName: this.state.firstName,
             lastName: this.state.lastName,
+            dateOfBirth: this.state.dateOfBirth,
+            age: this.state.age,
             username: this.state.lastName,
             email: this.state.email,
             password: this.state.password
@@ -62,6 +78,8 @@ class App extends Component {
         this.setState({
             firstName: '',
             lastName: '',
+            dateOfBirth: '',
+            age: '',
             username: '',
             email: '',
             password: ''
@@ -84,6 +102,17 @@ class App extends Component {
                             placeholder='Last Name'
                             onChange={this.changeLastName}
                             value={this.state.lastName}
+                            className='form-control form-group'/>
+                            <br/>
+                            <input type="date"
+                            onChange={this.changeDateOfBirth} 
+                            value={this.state.dateOfBirth}
+                            className='form-control form-group'/>
+                            <br/>
+                            <input type="number"
+                            placeholder='Age'
+                            onChange={this.changeAge}
+                            value={this.state.age}
                             className='form-control form-group'/>
                             <br/>
                             <input type = 'text' 
