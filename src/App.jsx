@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router';
 import "bootstrap/dist/css/bootstrap.min.css"
 import axios from 'axios'
 
@@ -90,6 +91,9 @@ class App extends Component {
         return ( 
             <div>
                 <div className='container'>
+                    <div className='redirect'>
+                        <Link to={"/users_list"}>Users</Link>
+                    </div>
                     <div className='form-div'>
                         <form onSubmit={this.onSubmit}>
                             <input type = 'text' 

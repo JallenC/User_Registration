@@ -1,8 +1,10 @@
 import React from 'react'
 import ReactDOM from 'react-dom';
-import App from './App'
+import App from './App';
+//import users_list from './users_list';
 
 ReactDOM.render(<App />, document.getElementById('root'))
+//ReactDOM.render(<users_list// />, document.getElementById('root'))
 
 /* import React from 'react';
 import ReactDOM from 'react-dom';
