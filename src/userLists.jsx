@@ -91,53 +91,26 @@ class userLists extends Component {
             <div>
                 <div className='container'>
                     <div className='form-div'>
-                        <form onSubmit={this.onSubmit}>
-                            <input type = 'text' 
-                            placeholder='First Name'
-                            onChange={this.changeFirstName}
-                            value={this.state.firstName}
-                            className='form-control form-group'/>
-                            <br/>
-                            <input type = 'text' 
-                            placeholder='Last Name'
-                            onChange={this.changeLastName}
-                            value={this.state.lastName}
-                            className='form-control form-group'/>
-                            <br/>
-                            <input type="date"
-                            onChange={this.changeDateOfBirth} 
-                            value={this.state.dateOfBirth}
-                            className='form-control form-group'/>
-                            <br/>
-                            <input type="number"
-                            placeholder='Age'
-                            onChange={this.changeAge}
-                            value={this.state.age}
-                            className='form-control form-group'/>
-                            <br/>
-                            <input type = 'text' 
-                            placeholder='Username'
-                            onChange={this.changeUsername}
-                            value={this.state.username}
-                            className='form-control form-group'/>
-                            <br/>
-                            <input type = 'text' 
-                            placeholder='E-mail'
-                            onChange={this.changeEmail}
-                            value={this.state.email}
-                            className='form-control form-group'/>
-                            <br/>
-                            <input type = 'text' 
-                            placeholder='Password'
-                            onChange={this.changePassword}
-                            value={this.state.password}
-                            className='form-control form-group'/>
-                            <br/>
-                            <input type='submit' className='btn btn-danger btn-block' value='Submit'/>
-                        </form>
-                    </div>
-                    <div className="post-users">
-                        {this.displayUserList(this.state.posts)}
+                        <div className='list'>
+                            <table>
+                                <tr>
+                                    <td>First Name</td>
+                                    <td>Last Name</td>
+                                    <td>Date of Birth</td>
+                                    <td>Age</td>
+                                    <td>Username</td>
+                                    <td>E-mail</td>
+                                </tr>
+                                <tr>
+                                    <td>First Name</td>
+                                    <td>Last Name</td>
+                                    <td>Date of Birth</td>
+                                    <td>Age</td>
+                                    <td>Username</td>
+                                    <td>E-mail</td>
+                                </tr>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>
