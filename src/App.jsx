@@ -13,7 +13,8 @@ class App extends Component {
             age: '',
             username: '',
             email: '',
-            password: ''
+            password: '',
+            posts: []
         }
         this.changeFirstName = this.changeFirstName.bind(this)
         this.changeLastName = this.changeLastName.bind(this)
@@ -23,6 +24,22 @@ class App extends Component {
         this.changeEmail = this.changeEmail.bind(this)
         this.changePassword = this.changePassword.bind(this)
         this.onSubmit = this.onSubmit.bind(this)
+    }
+
+    componentDidMount = () => {
+        this.getUserList();
+    };
+
+    getUserList = () => {
+        axios.get('/lists')
+            .then((response) => {
+                const data = response.data;
+                this.setState({ posts: data });
+                console.log('Data has been received!!');
+            })
+            .catch(() => {
+                alert('Error receiving data!');
+            });
     }
 
     changeFirstName(event) {
@@ -87,13 +104,34 @@ class App extends Component {
         })
     }
 
+    displayUserList = (posts) => {
+        if(!posts.length) return null;
+        posts.map((post, index) => {
+            <table key={index}>
+                <tr>
+                    <td>First Name</td>
+                    <td>Last Name</td>
+                    <td>Date of Birth</td>
+                    <td>Age</td>
+                    <td>Username</td>
+                    <td>E-mail</td>
+                </tr>
+                <tr>
+                    <td>{post.firstName}</td>
+                    <td>{post.lastName}</td>
+                    <td>{post.dateOfBirth}</td>
+                    <td>{post.age}</td>
+                    <td>{post.username}</td>
+                    <td>{post.email}</td>
+                </tr>
+            </table>
+        });
+    };
+
     render() {
         return ( 
             <div>
                 <div className='container'>
-                    <div className='redirect'>
-                        <Link to={"/users_list"}>Users</Link>
-                    </div>
                     <div className='form-div'>
                         <form onSubmit={this.onSubmit}>
                             <input type = 'text' 
@@ -139,6 +177,9 @@ class App extends Component {
                             <br/>
                             <input type='submit' className='btn btn-danger btn-block' value='Submit'/>
                         </form>
+                    </div>
+                    <div className="post-users">
+                        {this.displayUserList(this.state.posts)}
                     </div>
                 </div>
             </div>
