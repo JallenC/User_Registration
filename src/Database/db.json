@@ -1,0 +1,34 @@
+{
+  "users": [
+    {
+      "firstname": "Paige",
+      "lastname": "Reeves",
+      "username": "Peony",
+      "email": "paige.reeves@email.com",
+      "dateofbirth": "05/27/1989",
+      "gender": "Female",
+      "password": "PeachMangoPie",
+      "id": 1
+    },
+    {
+      "firstname": "Nellie",
+      "lastname": "Chadwick",
+      "username": "SilverOwl",
+      "email": "nellie.chadwick@email.com",
+      "dateofbirth": "10/30/1999",
+      "gender": "Female",
+      "password": "asdfghjkl",
+      "id": 2
+    },
+    {
+      "firstname": "Yuu",
+      "lastname": "Midori",
+      "username": "Prefect",
+      "email": "ramshackle.prefect@email.com",
+      "dateofbirth": "11/01/2005",
+      "gender": "Male",
+      "password": "GrimTanukis",
+      "id": 3
+    }
+  ]
+}
